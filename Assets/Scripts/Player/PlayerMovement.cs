@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     // References
     private Rigidbody2D _body;
     private Animator _animator;
-
+    private AttackPoint _attackPoint;
     // Direction Constants
     private const int DOWN = 0;
     private const int UP = 1;
@@ -23,15 +23,16 @@ public class PlayerMovement : MonoBehaviour
     {
         _body = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
+        _attackPoint = GetComponentInChildren<AttackPoint>();
     }
 
     private void Update()
     {
         Movement();
 
-        // Pass direction reference and update value based on 
-        // player movement.
+        // Direction
         GetDirection();
+        _attackPoint.UpdateDirection(_direction);
 
         // Animation handler
         HandleAnimation(_direction);
