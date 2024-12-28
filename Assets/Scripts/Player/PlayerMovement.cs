@@ -8,7 +8,6 @@ public class PlayerMovement : MonoBehaviour
     // References
     private Rigidbody2D _body;
     private Animator _animator;
-    private Transform _playerTransform;
 
     // Direction Constants
     private const int DOWN = 0;
@@ -24,7 +23,6 @@ public class PlayerMovement : MonoBehaviour
     {
         _body = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
-        _playerTransform = GetComponent<Transform>();
     }
 
     private void Update()
@@ -33,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
 
         // Pass direction reference and update value based on 
         // player movement.
-        GetDirection(ref _direction);
+        GetDirection();
 
         // Animation handler
         HandleAnimation(_direction);
@@ -56,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
 
     // Returns the direction based on the strongest axis of movement:
     // 0: Down, 1: Up, 2: Right, 3: Left
-    private void GetDirection(ref int direction)
+    private void GetDirection()
     {
         // Horizontal 
         if (Mathf.Abs(_change.x) > Mathf.Abs(_change.y))
@@ -71,12 +69,14 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void HandleAnimation(int direction)
+    private void HandleAnimation(float direction)
     {
         // Change idle animation state based on direction
-        _animator.SetInteger("direction", direction);
+        _animator.SetFloat("direction", direction);
 
         // Handle walking animation
-        _animator.SetBool("isWalking", _change.x != 0 || _change.y != 0);
+        _animator.SetFloat("horizontal", _change.x);
+        _animator.SetFloat("vertical", _change.y);
+        _animator.SetFloat("speed", _change.magnitude);
     }
 }
