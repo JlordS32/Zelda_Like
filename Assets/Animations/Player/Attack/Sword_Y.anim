@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Sword_Horizontal
+  m_Name: Sword_Y
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -32,6 +32,12 @@ AnimationClip:
       value: {fileID: -1505035228022946960, guid: 719dbc1816bf7594082b83250234b6b9, type: 3}
     - time: 0.41666666
       value: {fileID: 3122559763705076626, guid: 719dbc1816bf7594082b83250234b6b9, type: 3}
+    - time: 0.5
+      value: {fileID: -6348224356450917976, guid: 719dbc1816bf7594082b83250234b6b9, type: 3}
+    - time: 0.5833333
+      value: {fileID: 5096274383144239517, guid: 719dbc1816bf7594082b83250234b6b9, type: 3}
+    - time: 0.6666667
+      value: {fileID: 1983967712181948208, guid: 719dbc1816bf7594082b83250234b6b9, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -60,12 +66,15 @@ AnimationClip:
     - {fileID: 3971814140112647175, guid: 719dbc1816bf7594082b83250234b6b9, type: 3}
     - {fileID: -1505035228022946960, guid: 719dbc1816bf7594082b83250234b6b9, type: 3}
     - {fileID: 3122559763705076626, guid: 719dbc1816bf7594082b83250234b6b9, type: 3}
+    - {fileID: -6348224356450917976, guid: 719dbc1816bf7594082b83250234b6b9, type: 3}
+    - {fileID: 5096274383144239517, guid: 719dbc1816bf7594082b83250234b6b9, type: 3}
+    - {fileID: 1983967712181948208, guid: 719dbc1816bf7594082b83250234b6b9, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.43333334
+    m_StopTime: 0.68333334
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

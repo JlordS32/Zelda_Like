@@ -10,6 +10,7 @@ public class PlayerAttack : MonoBehaviour
     private Animator _animator;
     private PlayerMovement _movement;
     private Rigidbody2D _body;
+    private AttackPoint _attackPoint;
 
     // Variables
     private float _attackCooldownValue;
@@ -19,6 +20,7 @@ public class PlayerAttack : MonoBehaviour
         _animator = GetComponent<Animator>();
         _movement = GetComponent<PlayerMovement>();
         _body = GetComponent<Rigidbody2D>();
+        _attackPoint = GetComponentInChildren<AttackPoint>();
     }
 
     private void Update()
@@ -33,6 +35,7 @@ public class PlayerAttack : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && _attackCooldownValue >= _attackCooldown)
         {
             StartCoroutine(Attack());
+            _attackPoint.Attack();      // Trigger Sword Swing from AttackPoint
         }
     }
 

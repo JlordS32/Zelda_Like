@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D _body;
     private Animator _animator;
     private AttackPoint _attackPoint;
+    
     // Direction Constants
     private const int DOWN = 0;
     private const int UP = 1;
