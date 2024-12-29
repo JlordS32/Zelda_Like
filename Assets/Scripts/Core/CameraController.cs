@@ -1,16 +1,17 @@
+using TMPro;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Transform _target;
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if (_target == null) return;
+
+        // Follow Player
+        transform.position = new Vector3(_target.position.x, _target.position.y, transform.position.z);
+
+        // Something
     }
 }
